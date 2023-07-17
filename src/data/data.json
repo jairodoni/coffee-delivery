@@ -1,0 +1,154 @@
+{
+  "products": [
+    {
+      "id": 0,
+      "title": "Expresso Tradicional",
+      "type": [
+        "tradicional"
+      ],
+      "coffee_image": "https://i.ibb.co/KFZDknC/coffe-01.png",
+      "description": "O tradicional café feito com água quente e grãos moídos",
+      "value": 9.90
+    },
+    {
+      "id": 1,
+      "title": "Expresso Americano",
+      "type": [
+        "tradicional"
+      ],
+      "coffee_image": "https://i.ibb.co/MkmK6rV/coffe-02.png",
+      "description": "Expresso diluído, menos intenso que o tradicional",
+      "value": 9.90
+    },
+    {
+      "id": 2,
+      "title": "Expresso Cremoso",
+      "type": [
+        "tradicional"
+      ],
+      "coffee_image": "https://i.ibb.co/JtX2wr8/coffe-03.png",
+      "description": "Café expresso tradicional com espuma cremosa",
+      "value": 9.90
+    },
+    {
+      "id": 3,
+      "title": "Expresso Gelado",
+      "type": [
+        "tradicional",
+        "gelado"
+      ],
+      "coffee_image": "https://i.ibb.co/3TgtM3H/coffe-04.png",
+      "description": "Bebida preparada com café expresso e cubos de gelo",
+      "value": 9.90
+    },
+    {
+      "id": 4,
+      "title": "Café com Leite",
+      "type": [
+        "tradicional",
+        "com leite"
+      ],
+      "coffee_image": "https://i.ibb.co/wRGwxpw/coffe-05.png",
+      "description": "Meio a meio de expresso tradicional com leite vaporizado",
+      "value": 9.90
+    },
+    {
+      "id": 5,
+      "title": "Latte",
+      "type": [
+        "tradicional",
+        "com leite"
+      ],
+      "coffee_image": "https://i.ibb.co/QNfymxD/coffe-06.png",
+      "description": "Uma dose de café expresso com o dobro de leite e espuma cremosa",
+      "value": 9.90
+    },
+    {
+      "id": 6,
+      "title": "Capuccino",
+      "type": [
+        "tradicional",
+        "com leite"
+      ],
+      "coffee_image": "https://i.ibb.co/2M8HRLV/coffe-07.png",
+      "description": "Bebida com canela feita de doses iguais de café, leite e espuma",
+      "value": 9.90
+    },
+    {
+      "id": 7,
+      "title": "Macchiato",
+      "type": [
+        "tradicional",
+        "com leite"
+      ],
+      "coffee_image": "https://i.ibb.co/y0jB6Q8/coffe-08.png",
+      "description": "Café expresso misturado com um pouco de leite quente e espuma",
+      "value": 9.90
+    },
+    {
+      "id": 8,
+      "title": "Mocaccino",
+      "type": [
+        "tradicional",
+        "com leite"
+      ],
+      "coffee_image": "https://i.ibb.co/k9LRNyp/coffe-09.png",
+      "description": "Café expresso com calda de chocolate, pouco leite e espuma",
+      "value": 9.90
+    },
+    {
+      "id": 9,
+      "title": "Chocolate Quente",
+      "type": [
+        "especial",
+        "com leite"
+      ],
+      "coffee_image": "https://i.ibb.co/QDzkcvm/coffe-10.png",
+      "description": "Bebida feita com chocolate dissolvido no leite quente e café",
+      "value": 9.90
+    },
+    {
+      "id": 10,
+      "title": "Cubano",
+      "type": [
+        "especial",
+        "alcoólico",
+        "gelado"
+      ],
+      "coffee_image": "https://i.ibb.co/0CCHydQ/coffe-11.png",
+      "description": "Drink gelado de café expresso com rum, creme de leite e hortelã",
+      "value": 9.90
+    },
+    {
+      "id": 11,
+      "title": "Havaiano",
+      "type": [
+        "especial"
+      ],
+      "coffee_image": "https://i.ibb.co/3y2XkDz/coffe-12.png",
+      "description": "Bebida adocicada preparada com café e leite de coco",
+      "value": 9.90
+    },
+    {
+      "id": 1,
+      "title": "Árabe",
+      "type": [
+        "especial"
+      ],
+      "coffee_image": "https://i.ibb.co/DfvNHwn/coffe-13.png",
+      "description": "Bebida preparada com grãos de café árabe e especiarias",
+      "value": 9.90
+    },
+    {
+      "id": 13,
+      "title": "Irlandês",
+      "type": [
+        "especial",
+        "alcoólico"
+      ],
+      "coffee_image": "https://i.ibb.co/zf1K5VP/coffe-14.png",
+      "description": "Bebida a base de café, uísque irlandês, açúcar e chantilly",
+      "value": 9.90
+    }
+  ]
+}
