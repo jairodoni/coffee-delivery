@@ -2,7 +2,7 @@
   "products": [
     {
       "id": 0,
-      "title": "Expresso Tradicional",
+      "name": "Expresso Tradicional",
       "type": [
         "tradicional"
       ],
@@ -12,7 +12,7 @@
     },
     {
       "id": 1,
-      "title": "Expresso Americano",
+      "name": "Expresso Americano",
       "type": [
         "tradicional"
       ],
@@ -22,7 +22,7 @@
     },
     {
       "id": 2,
-      "title": "Expresso Cremoso",
+      "name": "Expresso Cremoso",
       "type": [
         "tradicional"
       ],
@@ -32,7 +32,7 @@
     },
     {
       "id": 3,
-      "title": "Expresso Gelado",
+      "name": "Expresso Gelado",
       "type": [
         "tradicional",
         "gelado"
@@ -43,7 +43,7 @@
     },
     {
       "id": 4,
-      "title": "Café com Leite",
+      "name": "Café com Leite",
       "type": [
         "tradicional",
         "com leite"
@@ -54,7 +54,7 @@
     },
     {
       "id": 5,
-      "title": "Latte",
+      "name": "Latte",
       "type": [
         "tradicional",
         "com leite"
@@ -65,7 +65,7 @@
     },
     {
       "id": 6,
-      "title": "Capuccino",
+      "name": "Capuccino",
       "type": [
         "tradicional",
         "com leite"
@@ -76,7 +76,7 @@
     },
     {
       "id": 7,
-      "title": "Macchiato",
+      "name": "Macchiato",
       "type": [
         "tradicional",
         "com leite"
@@ -87,7 +87,7 @@
     },
     {
       "id": 8,
-      "title": "Mocaccino",
+      "name": "Mocaccino",
       "type": [
         "tradicional",
         "com leite"
@@ -98,7 +98,7 @@
     },
     {
       "id": 9,
-      "title": "Chocolate Quente",
+      "name": "Chocolate Quente",
       "type": [
         "especial",
         "com leite"
@@ -109,7 +109,7 @@
     },
     {
       "id": 10,
-      "title": "Cubano",
+      "name": "Cubano",
       "type": [
         "especial",
         "alcoólico",
@@ -121,7 +121,7 @@
     },
     {
       "id": 11,
-      "title": "Havaiano",
+      "name": "Havaiano",
       "type": [
         "especial"
       ],
@@ -131,7 +131,7 @@
     },
     {
       "id": 1,
-      "title": "Árabe",
+      "name": "Árabe",
       "type": [
         "especial"
       ],
@@ -141,7 +141,7 @@
     },
     {
       "id": 13,
-      "title": "Irlandês",
+      "name": "Irlandês",
       "type": [
         "especial",
         "alcoólico"
