@@ -38,7 +38,7 @@ export const PresentationContainer = styled.div`
 `
 export const PresentationBackground = styled.div`
   width: 100%;
-  height: 500px;
+  height: 530px;
 
   position: absolute;
   left: 0;
@@ -48,11 +48,25 @@ export const PresentationBackground = styled.div`
   background-size: contain;
 
   filter: blur(4px);
+
+  @media (max-width: 1080px) {
+    height: 400px;
+  }
+  @media (max-width: 480px) {
+    height: 530px;
+  }
+  @media (max-width: 400px) {
+    height: 430px;
+  }
+  @media (max-width: 365px) {
+    height: 530px;
+  }
 `
 
 export const PresentationItems = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 0.2rem;
 
   div {
     display: inline-flex;
@@ -60,9 +74,21 @@ export const PresentationItems = styled.div`
 
     span {
       margin-left: 4px;
+      line-height: 1.3;
     }
   }
   div + div {
     margin: 1rem 0.5rem 0.5rem 0;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+
+    div {
+      span {
+        margin-left: 8px;
+        font-size: 1.2rem;
+      }
+    }
   }
 `

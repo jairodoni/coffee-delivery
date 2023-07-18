@@ -29,6 +29,10 @@ export const GlobalStyle = createGlobalStyle`
     color: ${(props) => props.theme['gray-700']};
     -webkit-font-smoothing: antialiased;
     padding: 1rem;
+
+    @media (max-width: 480px) {
+      padding: 0.5rem;
+    }
   }
 
   body,

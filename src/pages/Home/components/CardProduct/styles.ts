@@ -22,11 +22,12 @@ export const CardContainer = styled.div`
   }
 
   > div:last-child {
+    max-height: 19.375rem;
     z-index: 1;
-    height: 90%;
+    height: 100%;
     max-width: 100%;
 
-    padding: 6.4rem 0.875rem 0.875rem;
+    padding: 4.5rem 1.5rem 1.25rem;
     flex-wrap: wrap;
     border-radius: 6px 36px 6px 36px;
     background: ${(props) => props.theme['gray-200']};
@@ -35,6 +36,21 @@ export const CardContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+  }
+
+  @media (max-width: 530px) {
+    height: 18rem;
+    max-width: 14rem;
+    > div:last-child {
+      padding: 6rem 0.8rem 0.8rem;
+    }
+  }
+  @media (max-width: 480px) {
+    height: 18rem;
+    max-width: 13rem;
+    > div:last-child {
+      padding: 5rem 0.7rem 0.7rem;
+    }
   }
 `
 
@@ -80,13 +96,21 @@ export const SelectProduct = styled.div`
   flex-direction: row;
 
   small {
-    /* border: 2px solid blueviolet; */
     font-size: 0.875rem;
+
     span {
       font-size: 1.5rem;
       font-family: 'Baloo 2', sans-serif;
       font-weight: 700;
       line-height: 1.3;
+    }
+  }
+  @media (max-width: 480px) {
+    small {
+      font-size: 0.6rem;
+      span {
+        font-size: 1rem;
+      }
     }
   }
 `
@@ -134,6 +158,21 @@ export const ControlAmountProduct = styled.div`
 
     &:hover {
       background: ${(props) => props.theme['purple-500']};
+    }
+  }
+  @media (max-width: 480px) {
+    > div {
+      > button {
+        width: 1.8rem;
+      }
+    }
+    > button {
+      height: 1.8rem;
+      width: 1.8rem;
+      svg {
+        height: 14px;
+        width: 14px;
+      }
     }
   }
 `

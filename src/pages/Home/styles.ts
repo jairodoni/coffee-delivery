@@ -10,7 +10,20 @@ export const HomeContainer = styled.div`
 `
 export const ProductsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  grid-row-gap: 1.25rem;
+  grid-column-gap: 2rem;
+  place-items: center;
   margin-top: 2.2rem;
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    grid-row-gap: 1rem;
+    grid-column-gap: 1rem;
+  }
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    grid-row-gap: 3rem;
+    grid-column-gap: 0.5rem;
+  }
 `
