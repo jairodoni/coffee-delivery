@@ -7,6 +7,8 @@ export const HeaderContainer = styled.header`
   flex-direction: row;
   justify-content: space-between;
 
+  margin-bottom: 5.875rem;
+
   div {
     display: flex;
     justify-content: flex-end;
@@ -38,6 +40,7 @@ export const LocationContainer = styled.div`
   }
   svg {
     color: ${(props) => props.theme['purple-500']};
+    margin-right: 4px;
   }
 `
 
