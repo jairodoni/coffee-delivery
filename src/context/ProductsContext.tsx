@@ -1,14 +1,6 @@
 import { createContext, ReactNode, useEffect, useState } from 'react'
 import { api } from '../service/api'
-
-interface Coffee {
-  id: string
-  name: string
-  type: string
-  coffee_image: string
-  description: string
-  value: number
-}
+import { Coffee } from '../@types/globalTypes'
 
 interface ProductsContextData {
   coffeeList: Coffee[]

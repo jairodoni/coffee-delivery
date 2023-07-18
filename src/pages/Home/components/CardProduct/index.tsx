@@ -5,22 +5,36 @@ import {
   InfoProduct,
   SelectProduct,
 } from './styles'
+import { Coffee } from '../../../../@types/globalTypes'
 
-export function CardProduct() {
+interface CardProductProps {
+  product: Coffee
+}
+
+export function CardProduct({ product }: CardProductProps) {
   return (
     <CardContainer>
       <div>
-        <img src="https://i.ibb.co/KFZDknC/coffe-01.png" alt="" />
+        <img src={product.coffee_image} alt="" />
       </div>
       <div>
         <InfoProduct>
-          <span>TRADICIONAL</span>
-          <h4>Expresso Tradicional</h4>
-          <p>O tradicional café feito com água quente e grãos moídos</p>
+          <label>
+            {product.type.map((typeName: string) => (
+              <span key={typeName}>{typeName.toString().toUpperCase()}</span>
+            ))}
+          </label>
+          <h4>{product.name}</h4>
+          <p>{product.description}</p>
         </InfoProduct>
         <SelectProduct>
           <small>
-            R$ <span>9,90</span>
+            R${' '}
+            <span>
+              {new Intl.NumberFormat('pt-BR', {
+                minimumFractionDigits: 2,
+              }).format(product.value)}
+            </span>
           </small>
           <ControlAmountProduct>
             <div>

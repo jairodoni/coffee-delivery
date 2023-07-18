@@ -11,6 +11,7 @@ export const CardContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
     img {
       width: 7.5rem;
       height: 7.5rem;
@@ -41,17 +42,21 @@ export const InfoProduct = styled.div`
   display: flex;
   flex-direction: column;
   line-height: 1.3;
-
-  > span {
+  > label {
+    display: inline-block;
+    flex-wrap: wrap;
     margin-bottom: 1rem;
-    padding: 4px 8px;
-    border-radius: 100px;
 
-    background: ${(props) => props.theme['yellow-300']};
-    color: ${(props) => props.theme['yellow-700']};
+    > span {
+      padding: 4px 8px;
+      border-radius: 100px;
 
-    font-size: 0.625rem;
-    font-weight: 700;
+      background: ${(props) => props.theme['yellow-300']};
+      color: ${(props) => props.theme['yellow-700']};
+
+      font-size: 0.625rem;
+      font-weight: 700;
+    }
   }
   > h4 {
     font-family: 'Baloo 2', sans-serif;
