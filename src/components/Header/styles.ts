@@ -38,7 +38,7 @@ export const LocationContainer = styled.div`
   span + span {
     margin-left: 10px;
   }
-  svg {
+  > svg {
     color: ${(props) => props.theme['purple-500']};
     margin-right: 4px;
   }

@@ -25,6 +25,15 @@ export const PresentationContainer = styled.div`
   }
   img {
     width: 29.75rem;
+    object-fit: contain;
+  }
+
+  @media (max-width: 1100px) {
+    img {
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
   }
 `
 export const PresentationBackground = styled.div`
@@ -33,7 +42,7 @@ export const PresentationBackground = styled.div`
 
   position: absolute;
   left: 0;
-  margin-top: 3rem;
+  margin-top: -4rem;
 
   background-image: url('/src/assets/imgs/background-presentation.png');
   background-size: contain;
