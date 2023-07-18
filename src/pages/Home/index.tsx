@@ -1,7 +1,10 @@
+import { HeadTitleComponent } from '../../components/HeadTitleComponent'
+
 export function Home() {
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
+    <>
+      <HeadTitleComponent title="Home" />
+      <h1>BATATA</h1>
+    </>
   )
 }
