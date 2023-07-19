@@ -6,12 +6,26 @@ import {
   SelectProduct,
 } from './styles'
 import { Coffee } from '../../../../@types/globalTypes'
+import { useState } from 'react'
+import { useProducts } from '../../../../hooks/useProducts'
 
 interface CardProductProps {
   product: Coffee
 }
 
 export function CardProduct({ product }: CardProductProps) {
+  const { handleSetShoppingCart } = useProducts()
+  const [qtde, setQtde] = useState<number>(1)
+
+  function handleSetQtdeProduct(typeOperation: 'add' | 'remove') {
+    if (typeOperation === 'add') {
+      setQtde((state) => state + 1)
+    }
+    if (typeOperation === 'remove') {
+      if (qtde > 1) setQtde((state) => state - 1)
+    }
+  }
+
   return (
     <CardContainer>
       <div>
@@ -38,15 +52,19 @@ export function CardProduct({ product }: CardProductProps) {
           </small>
           <ControlAmountProduct>
             <div>
-              <button>
+              <button onClick={() => handleSetQtdeProduct('remove')}>
                 <Minus />
               </button>
-              <span>1</span>
-              <button>
+              <span>{qtde}</span>
+              <button onClick={() => handleSetQtdeProduct('add')}>
                 <Plus />
               </button>
             </div>
-            <button>
+            <button
+              onClick={() =>
+                handleSetShoppingCart({ coffeeId: product.id, qtde })
+              }
+            >
               <ShoppingCart size={18} weight="fill" />
             </button>
           </ControlAmountProduct>
