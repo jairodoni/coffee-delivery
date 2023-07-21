@@ -19,7 +19,6 @@ export const HeaderContainer = styled.header`
 export const LocationContainer = styled.div`
   min-width: 100px;
   height: 38px;
-  border: 2px solid red;
 
   display: flex;
   flex-direction: row;

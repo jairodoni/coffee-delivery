@@ -62,7 +62,7 @@ export function CardProduct({ product }: CardProductProps) {
             </div>
             <button
               onClick={() =>
-                handleSetShoppingCart({ coffeeId: product.id, qtde })
+                handleSetShoppingCart({ coffeeId: Number(product.id), qtde })
               }
             >
               <ShoppingCart size={18} weight="fill" />

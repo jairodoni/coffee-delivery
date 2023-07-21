@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import logoWritted from '../../assets/imgs/logo-coffee-delivery-writted.svg'
 import { CartButtom, HeaderContainer, LocationContainer } from './styles'
 import { MapPin, ShoppingCart } from 'phosphor-react'
+import { NavLink } from 'react-router-dom'
 
 interface LocationType {
   lat: number
@@ -70,9 +71,11 @@ export function Header() {
             <span>{addressLocation.state}</span>
           </LocationContainer>
         )}
-        <CartButtom>
-          <ShoppingCart size={22} weight="fill" />
-        </CartButtom>
+        <NavLink to="/payment">
+          <CartButtom>
+            <ShoppingCart size={22} weight="fill" />
+          </CartButtom>
+        </NavLink>
       </div>
     </HeaderContainer>
   )
