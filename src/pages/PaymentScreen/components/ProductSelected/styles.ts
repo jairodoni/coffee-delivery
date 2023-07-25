@@ -23,6 +23,7 @@ export const ProductSelectedContainer = styled.div`
     line-height: 1.3;
 
     > span {
+      min-width: fit-content;
       font-weight: 700;
     }
   }
@@ -56,9 +57,14 @@ export const ProductSelectedContainer = styled.div`
       font-size: 0.75rem;
       line-height: 1.6;
 
+      transition: filter ease 0.2s;
+
       svg {
         margin-right: 4px;
         color: ${(props) => props.theme['purple-500']};
+      }
+      &:hover {
+        filter: brightness(0.95);
       }
     }
   }

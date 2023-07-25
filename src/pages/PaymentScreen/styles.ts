@@ -83,5 +83,11 @@ export const TotalComponent = styled.div`
     font-size: 0.875rem;
     font-weight: 700;
     line-height: 1.6;
+
+    transition: background ease-in 0.2s;
+
+    &:hover {
+      background: ${(props) => props.theme['yellow-700']};
+    }
   }
 `

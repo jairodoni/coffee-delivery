@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { ButtonTypePayment, FormContainer, HeaderForm } from './styles'
 import {
   MapPinLine,
@@ -6,8 +7,36 @@ import {
   Bank,
   Money,
 } from 'phosphor-react'
+import axios from 'axios'
 
 export function FormPayment() {
+  const [typePaymentSelected, setTypePaymentSelected] = useState<string>('')
+
+  function searchCepInfoLocation(text: string) {
+    const cepSplitFormated = text.split('-')
+    const cepFormated = cepSplitFormated.join('').toString()
+
+    // if (dadosPerfil.cepInvalido === false) {
+    const response = axios.get(`https://viacep.com.br/ws/${cepFormated}/json`)
+    // .then((res) => res.json())
+    // .then((data) => {
+    //   this.setState({
+    //     dadosPerfil: {
+    //       ...dadosPerfil,
+    //       cep: data.cep,
+    //       endereco: data.logradouro,
+    //       bairro: data.bairro,
+    //     },
+    //     cepInvalido: false,
+    //   })
+    // })
+    console.log('RESPONSE: ', response)
+    // }
+  }
+  // useEffect(() => {
+  //   searchCepInfoLocation(13860-100)
+  // }, [])
+
   return (
     <FormContainer>
       <h1>Complete seu pedido</h1>
@@ -42,15 +71,30 @@ export function FormPayment() {
           </p>
         </HeaderForm>
         <div>
-          <ButtonTypePayment>
+          <ButtonTypePayment
+            type="button"
+            typePaymentSelected={`${typePaymentSelected}`}
+            typePayment="creditCard"
+            onClick={() => setTypePaymentSelected('creditCard')}
+          >
             <CreditCard />
             CARTÃO DE CREDITO
           </ButtonTypePayment>
-          <ButtonTypePayment>
+          <ButtonTypePayment
+            type="button"
+            typePaymentSelected={typePaymentSelected}
+            typePayment="debitCard"
+            onClick={() => setTypePaymentSelected('debitCard')}
+          >
             <Bank />
             CARTÃO DE DEBITO
           </ButtonTypePayment>
-          <ButtonTypePayment>
+          <ButtonTypePayment
+            type="button"
+            typePaymentSelected={typePaymentSelected}
+            typePayment="money"
+            onClick={() => setTypePaymentSelected('money')}
+          >
             <Money />
             DINHEIRO
           </ButtonTypePayment>

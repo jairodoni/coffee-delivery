@@ -1,9 +1,14 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const ICON_COLOR = {
   yellow: 'yellow-700',
   purple: 'purple-500',
 } as const
+
+interface TypeProps {
+  typePaymentSelected: string
+  typePayment: 'creditCard' | 'debitCard' | 'money'
+}
 
 export interface ColorIconProps {
   color: keyof typeof ICON_COLOR
@@ -82,7 +87,7 @@ export const HeaderForm = styled.div<ColorIconProps>`
   }
 `
 
-export const ButtonTypePayment = styled.button`
+export const ButtonTypePayment = styled.button<TypeProps>`
   height: 3.1875rem;
   width: 100%;
   padding: 1rem;
@@ -101,8 +106,23 @@ export const ButtonTypePayment = styled.button`
 
   svg {
     margin-right: 12px;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     color: ${(props) => props.theme['purple-500']};
   }
+
+  transition: background ease 0.1s;
+
+  &:hover {
+    background: ${(props) => props.theme['gray-500']};
+  }
+  ${({ typePayment, typePaymentSelected }) =>
+    typePaymentSelected === typePayment &&
+    css`
+      background: ${(props) => props.theme['purple-300']};
+      border: 1px solid ${(props) => props.theme['purple-500']};
+      &:hover {
+        background: ${(props) => props.theme['purple-300']};
+      }
+    `};
 `
