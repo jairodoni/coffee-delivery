@@ -8,6 +8,7 @@ import {
 import { Coffee } from '../../../../@types/globalTypes'
 import { useState } from 'react'
 import { useProducts } from '../../../../hooks/useProducts'
+import { formatPriceWithoutType } from '../../../../util/format'
 
 interface CardProductProps {
   product: Coffee
@@ -43,12 +44,7 @@ export function CardProduct({ product }: CardProductProps) {
         </InfoProduct>
         <SelectProduct>
           <small>
-            R${' '}
-            <span>
-              {new Intl.NumberFormat('pt-BR', {
-                minimumFractionDigits: 2,
-              }).format(product.value)}
-            </span>
+            R$ <span>{formatPriceWithoutType(product.value)}</span>
           </small>
           <ControlAmountProduct>
             <div>

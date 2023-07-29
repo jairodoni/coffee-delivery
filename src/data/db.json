@@ -1,4 +1,5 @@
 {
+  "shoppingRegistred": [],
   "products": [
     {
       "id": 1,
@@ -8,7 +9,7 @@
       ],
       "coffee_image": "https://i.ibb.co/KFZDknC/coffee-01.png",
       "description": "O tradicional café feito com água quente e grãos moídos",
-      "value": 9.90
+      "value": 9.9
     },
     {
       "id": 2,
@@ -18,7 +19,7 @@
       ],
       "coffee_image": "https://i.ibb.co/wRGwxpw/coffee-02.png",
       "description": "Expresso diluído, menos intenso que o tradicional",
-      "value": 9.90
+      "value": 9.9
     },
     {
       "id": 3,
@@ -28,7 +29,7 @@
       ],
       "coffee_image": "https://i.ibb.co/k9LRNyp/coffee-03.png",
       "description": "Café expresso tradicional com espuma cremosa",
-      "value": 9.90
+      "value": 9.9
     },
     {
       "id": 4,
@@ -39,7 +40,7 @@
       ],
       "coffee_image": "https://i.ibb.co/3y2XkDz/coffee-04.png",
       "description": "Bebida preparada com café expresso e cubos de gelo",
-      "value": 9.90
+      "value": 9.9
     },
     {
       "id": 5,
@@ -50,7 +51,7 @@
       ],
       "coffee_image": "https://i.ibb.co/MkmK6rV/coffee-05.png",
       "description": "Meio a meio de expresso tradicional com leite vaporizado",
-      "value": 10.90
+      "value": 10.9
     },
     {
       "id": 6,
@@ -61,7 +62,7 @@
       ],
       "coffee_image": "https://i.ibb.co/QNfymxD/coffee-06.png",
       "description": "Uma dose de café expresso com o dobro de leite e espuma cremosa",
-      "value": 11.90
+      "value": 11.9
     },
     {
       "id": 7,
@@ -72,7 +73,7 @@
       ],
       "coffee_image": "https://i.ibb.co/QDzkcvm/coffee-07.png",
       "description": "Bebida com canela feita de doses iguais de café, leite e espuma",
-      "value": 11.90
+      "value": 11.9
     },
     {
       "id": 8,
@@ -83,7 +84,7 @@
       ],
       "coffee_image": "https://i.ibb.co/DfvNHwn/coffee-08.png",
       "description": "Café expresso misturado com um pouco de leite quente e espuma",
-      "value": 13.90
+      "value": 13.9
     },
     {
       "id": 9,
@@ -94,7 +95,7 @@
       ],
       "coffee_image": "https://i.ibb.co/JtX2wr8/coffee-09.png",
       "description": "Café expresso com calda de chocolate, pouco leite e espuma",
-      "value": 13.90
+      "value": 13.9
     },
     {
       "id": 10,
@@ -105,7 +106,7 @@
       ],
       "coffee_image": "https://i.ibb.co/2M8HRLV/coffee-10.png",
       "description": "Bebida feita com chocolate dissolvido no leite quente e café",
-      "value": 15.90
+      "value": 15.9
     },
     {
       "id": 11,
@@ -117,7 +118,7 @@
       ],
       "coffee_image": "https://i.ibb.co/0CCHydQ/coffee-11.png",
       "description": "Drink gelado de café expresso com rum, creme de leite e hortelã",
-      "value": 18.90
+      "value": 18.9
     },
     {
       "id": 12,
@@ -127,7 +128,7 @@
       ],
       "coffee_image": "https://i.ibb.co/zf1K5VP/coffee-12.png",
       "description": "Bebida adocicada preparada com café e leite de coco",
-      "value": 19.90
+      "value": 19.9
     },
     {
       "id": 13,
@@ -137,7 +138,7 @@
       ],
       "coffee_image": "https://i.ibb.co/3TgtM3H/coffee-13.png",
       "description": "Bebida preparada com grãos de café árabe e especiarias",
-      "value": 19.90
+      "value": 19.9
     },
     {
       "id": 14,
@@ -148,7 +149,7 @@
       ],
       "coffee_image": "https://i.ibb.co/y0jB6Q8/coffee-14.png",
       "description": "Bebida a base de café, uísque irlandês, açúcar e chantilly",
-      "value": 19.90
+      "value": 19.9
     }
   ]
 }

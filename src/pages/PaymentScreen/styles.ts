@@ -4,7 +4,6 @@ export const PaymentContainer = styled.form`
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  flex-direction: row;
 
   h1 {
     font-family: 'Baloo 2', sans-serif;
@@ -31,6 +30,7 @@ export const PaymentContainer = styled.form`
 
   > div:first-child > div:last-child {
     min-height: 12.9375rem;
+    margin-bottom: 2rem;
   }
 
   > div:last-child {
@@ -42,6 +42,13 @@ export const PaymentContainer = styled.form`
     padding: 2.5rem;
     border-radius: 6px 44px 6px 44px;
     background: ${(props) => props.theme['gray-200']};
+  }
+  @media (max-width: 950px) {
+    flex-direction: column;
+
+    > div:last-child {
+      width: 100%;
+    }
   }
 `
 export const TotalComponent = styled.div`

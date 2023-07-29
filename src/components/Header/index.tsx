@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react'
 import logoWritted from '../../assets/imgs/logo-coffee-delivery-writted.svg'
 import { CartButtom, HeaderContainer, LocationContainer } from './styles'
 import { MapPin, ShoppingCart } from 'phosphor-react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { useProducts } from '../../hooks/useProducts'
 
 interface LocationType {
   lat: number
@@ -16,10 +17,12 @@ interface AddressType {
 }
 
 export function Header() {
+  const { shoppingCart } = useProducts()
   const [location, setLocation] = useState<LocationType | null>(null)
   const [addressLocation, setAddressLocation] = useState<AddressType | null>(
     null,
   )
+  const navigate = useNavigate()
 
   async function getPermisionAndLocation() {
     navigator.geolocation.getCurrentPosition((pos) => {
@@ -60,9 +63,17 @@ export function Header() {
     }
   }, [location])
 
+  function handleShoppingCartLink() {
+    if (shoppingCart.length > 0) {
+      navigate('/payment')
+    }
+  }
+
   return (
     <HeaderContainer>
-      <img src={logoWritted} alt="" />
+      <NavLink to="/">
+        <img src={logoWritted} alt="" />
+      </NavLink>
       <div>
         {!!addressLocation && (
           <LocationContainer>
@@ -71,11 +82,10 @@ export function Header() {
             <span>{addressLocation.state}</span>
           </LocationContainer>
         )}
-        <NavLink to="/payment">
-          <CartButtom>
-            <ShoppingCart size={22} weight="fill" />
-          </CartButtom>
-        </NavLink>
+
+        <CartButtom onClick={handleShoppingCartLink}>
+          <ShoppingCart size={22} weight="fill" />
+        </CartButtom>
       </div>
     </HeaderContainer>
   )

@@ -1,7 +1,9 @@
 import { createContext, ReactNode, useEffect, useState } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 import { api } from '../service/api'
+import { useNavigate } from 'react-router-dom'
 import { Coffee } from '../@types/globalTypes'
-import { calcularPrecoPrazo, consultarCep } from 'correios-brasil/dist'
+import { ShippingAddressFormData } from '../pages/PaymentScreen'
 
 interface ShoppingCart {
   coffeeId: number
@@ -15,7 +17,10 @@ interface ShoppingCartFormated {
   qtde: number
   value: number
 }
-
+interface FinalShoppingList {
+  finalShoppingList: ShoppingCartFormated[]
+  total: number
+}
 interface ProductsContextData {
   coffeeList: Coffee[]
   shoppingCart: ShoppingCart[]
@@ -25,6 +30,7 @@ interface ProductsContextData {
   calcTotalPayment: () => void
   setTotalPayment: (totalPayment: number) => void
   setTotalPurchase: (value: number, qtde: number) => void
+  registerNewOrder: (data: ShippingAddressFormData) => void
 }
 
 interface ProductsProviderProps {
@@ -36,6 +42,9 @@ export const ProductsContext = createContext({} as ProductsContextData)
 export function ProductsProvider({ children }: ProductsProviderProps) {
   const [coffeeList, setCoffeeList] = useState<Coffee[]>([])
   const [totalPayment, setTotalPayment] = useState<number>(0)
+  const [productOrder, setProductOrder] = useState<FinalShoppingList | null>(
+    null,
+  )
   const [shoppingCart, setShoppingCart] = useState<ShoppingCart[]>(() => {
     const storagedCart = localStorage.getItem(
       '@coffee-delivery:shopping-cart-coffee-1.0.0',
@@ -47,6 +56,8 @@ export function ProductsProvider({ children }: ProductsProviderProps) {
 
     return []
   })
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     const stateJSON = JSON.stringify(shoppingCart)
@@ -132,7 +143,33 @@ export function ProductsProvider({ children }: ProductsProviderProps) {
       return acumulador + unitProduct
     }, 0)
 
+    setProductOrder({
+      finalShoppingList: listProductsInCart,
+      total,
+    })
     setTotalPayment(total)
+  }
+
+  async function registerNewOrder(data: ShippingAddressFormData) {
+    const formatedData = {
+      id: uuidv4(),
+      destination: {
+        cep: data.cep,
+        street: data.street,
+        numberHouse: data.numberHouse,
+        complement: data.complement,
+        district: data.district,
+        city: data.city,
+        uf: data.uf,
+      },
+      productOrder,
+      payment: data.payment,
+    }
+
+    console.log(formatedData)
+    await api.post('/shoppingRegistred', formatedData)
+    setShoppingCart([])
+    navigate('/purchase-completed')
   }
 
   useEffect(() => {
@@ -147,6 +184,7 @@ export function ProductsProvider({ children }: ProductsProviderProps) {
         totalPayment,
         handleSetShoppingCart,
         handleRemoveItemShoppingCart,
+        registerNewOrder,
         calcTotalPayment,
         setTotalPayment,
         setTotalPurchase,

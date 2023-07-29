@@ -1,5 +1,12 @@
 import { useEffect, useState } from 'react'
-import { ButtonTypePayment, FormContainer, HeaderForm } from './styles'
+import { useFormContext } from 'react-hook-form'
+import { ErrorMessage } from '@hookform/error-message'
+import {
+  ButtonTypePayment,
+  FormContainer,
+  HeaderForm,
+  InputComponent,
+} from './styles'
 import {
   MapPinLine,
   CurrencyDollar,
@@ -11,31 +18,52 @@ import axios from 'axios'
 
 export function FormPayment() {
   const [typePaymentSelected, setTypePaymentSelected] = useState<string>('')
+  const {
+    register,
+    setValue,
+    watch,
+    formState: { errors },
+  } = useFormContext()
 
-  function searchCepInfoLocation(text: string) {
+  const cepFilled = watch('cep')
+  const payment = watch('payment')
+
+  async function searchCepInfoLocation(text: string) {
     const cepSplitFormated = text.split('-')
     const cepFormated = cepSplitFormated.join('').toString()
 
-    // if (dadosPerfil.cepInvalido === false) {
-    const response = axios.get(`https://viacep.com.br/ws/${cepFormated}/json`)
-    // .then((res) => res.json())
-    // .then((data) => {
-    //   this.setState({
-    //     dadosPerfil: {
-    //       ...dadosPerfil,
-    //       cep: data.cep,
-    //       endereco: data.logradouro,
-    //       bairro: data.bairro,
-    //     },
-    //     cepInvalido: false,
-    //   })
-    // })
-    console.log('RESPONSE: ', response)
-    // }
+    await axios
+      .get(`https://viacep.com.br/ws/${cepFormated}/json`)
+      .then((resp) => {
+        const data = resp.data
+        setValue('cep', data.cep)
+        setValue('street', data.logradouro)
+        setValue('district', data.bairro)
+        setValue('city', data.localidade)
+        setValue('uf', data.uf)
+      })
   }
-  // useEffect(() => {
-  //   searchCepInfoLocation(13860-100)
-  // }, [])
+
+  useEffect(() => {
+    if (cepFilled.length > 0) {
+      searchCepInfoLocation(cepFilled)
+    }
+  }, [cepFilled])
+
+  useEffect(() => {
+    if (typePaymentSelected === 'creditCard') {
+      setValue('payment', 'creditCard')
+    }
+    if (typePaymentSelected === 'debitCard') {
+      setValue('payment', 'debitCard')
+    }
+    if (typePaymentSelected === 'money') {
+      setValue('payment', 'money')
+    }
+  }, [typePaymentSelected])
+  useEffect(() => {
+    console.log(payment)
+  }, [payment])
 
   return (
     <FormContainer>
@@ -48,16 +76,86 @@ export function FormPayment() {
             <span>Informe o endereço onde deseja receber seu pedido</span>
           </p>
         </HeaderForm>
-        <input type="text" placeholder="CEP" />
-        <input type="text" placeholder="Rua" />
+        <input id="cep" type="text" placeholder="CEP" {...register('cep')} />
+        <ErrorMessage
+          errors={errors}
+          name="cep"
+          render={({ message }) => <span>{message}</span>}
+        />
+        <input
+          id="street"
+          type="text"
+          placeholder="Rua"
+          {...register('street')}
+        />
+        <ErrorMessage
+          errors={errors}
+          name="street"
+          render={({ message }) => <span>{message}</span>}
+        />
         <div>
-          <input type="text" placeholder="Número" />
-          <input type="text" placeholder="Complemento" />
+          <InputComponent>
+            <input
+              id="numberHouse"
+              type="number"
+              placeholder="Número"
+              {...register('numberHouse', { valueAsNumber: true })}
+            />
+            <ErrorMessage
+              errors={errors}
+              name="numberHouse"
+              render={({ message }) => <span>{message}</span>}
+            />
+          </InputComponent>
+          <InputComponent>
+            <input
+              id="complement"
+              type="text"
+              placeholder="Complemento"
+              {...register('complement')}
+            />
+            <ErrorMessage
+              errors={errors}
+              name="complement"
+              render={({ message }) => <span>{message}</span>}
+            />
+          </InputComponent>
         </div>
         <div>
-          <input type="text" placeholder="Bairro" />
-          <input type="text" placeholder="Cidade" />
-          <input type="text" placeholder="UF" />
+          <InputComponent>
+            <input
+              id="district"
+              type="text"
+              placeholder="Bairro"
+              {...register('district')}
+            />
+            <ErrorMessage
+              errors={errors}
+              name="district"
+              render={({ message }) => <span>{message}</span>}
+            />
+          </InputComponent>
+          <InputComponent>
+            <input
+              id="city"
+              type="text"
+              placeholder="Cidade"
+              {...register('city')}
+            />
+            <ErrorMessage
+              errors={errors}
+              name="city"
+              render={({ message }) => <span>{message}</span>}
+            />
+          </InputComponent>
+          <InputComponent>
+            <input id="uf" type="text" placeholder="UF" {...register('uf')} />
+            <ErrorMessage
+              errors={errors}
+              name="uf"
+              render={({ message }) => <span>{message}</span>}
+            />
+          </InputComponent>
         </div>
       </div>
       <div>
@@ -75,6 +173,8 @@ export function FormPayment() {
             type="button"
             typePaymentSelected={`${typePaymentSelected}`}
             typePayment="creditCard"
+            id="payment"
+            {...register('payment')}
             onClick={() => setTypePaymentSelected('creditCard')}
           >
             <CreditCard />
@@ -84,6 +184,7 @@ export function FormPayment() {
             type="button"
             typePaymentSelected={typePaymentSelected}
             typePayment="debitCard"
+            {...register('payment')}
             onClick={() => setTypePaymentSelected('debitCard')}
           >
             <Bank />
@@ -93,12 +194,18 @@ export function FormPayment() {
             type="button"
             typePaymentSelected={typePaymentSelected}
             typePayment="money"
+            {...register('payment')}
             onClick={() => setTypePaymentSelected('money')}
           >
             <Money />
             DINHEIRO
           </ButtonTypePayment>
         </div>
+        <ErrorMessage
+          errors={errors}
+          name="payment"
+          render={({ message }) => <span>{message}</span>}
+        />
       </div>
     </FormContainer>
   )

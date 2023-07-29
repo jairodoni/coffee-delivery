@@ -2,6 +2,7 @@ import { Minus, Plus, Trash } from 'phosphor-react'
 import { ControlAmountProduct, ProductSelectedContainer } from './styles'
 import { useProducts } from '../../../../hooks/useProducts'
 import { Coffee } from '../../../../@types/globalTypes'
+import { formatPriceWithType } from '../../../../util/format'
 
 interface ProductSelectedProps {
   shoppingCartData: {
@@ -11,12 +12,8 @@ interface ProductSelectedProps {
 }
 
 export function ProductSelected(shoppingCartData: ProductSelectedProps) {
-  const {
-    coffeeList,
-    setTotalPurchase,
-    handleSetShoppingCart,
-    handleRemoveItemShoppingCart,
-  } = useProducts()
+  const { coffeeList, handleSetShoppingCart, handleRemoveItemShoppingCart } =
+    useProducts()
 
   const productCart = shoppingCartData.shoppingCartData
 
@@ -75,12 +72,7 @@ export function ProductSelected(shoppingCartData: ProductSelectedProps) {
                 </button>
               </div>
             </div>
-            <span>
-              R${' '}
-              {new Intl.NumberFormat('pt-BR', {
-                minimumFractionDigits: 2,
-              }).format(product[0].value)}
-            </span>
+            <span>{formatPriceWithType(product[0].value)}</span>
           </div>
         </>
       )}
