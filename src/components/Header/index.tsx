@@ -86,6 +86,11 @@ export function Header() {
         <CartButtom onClick={handleShoppingCartLink}>
           <ShoppingCart size={22} weight="fill" />
         </CartButtom>
+        {shoppingCart.length > 0 && (
+          <div>
+            <span>{shoppingCart.length}</span>
+          </div>
+        )}
       </div>
     </HeaderContainer>
   )

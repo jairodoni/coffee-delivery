@@ -45,9 +45,18 @@ export const PaymentContainer = styled.form`
   }
   @media (max-width: 950px) {
     flex-direction: column;
+    align-items: center;
 
+    > div:first-child {
+      width: 100%;
+    }
     > div:last-child {
       width: 100%;
+    }
+  }
+  @media (max-width: 550px) {
+    > div:last-child > div {
+      padding: 1rem;
     }
   }
 `
@@ -95,6 +104,9 @@ export const TotalComponent = styled.div`
 
     &:hover {
       background: ${(props) => props.theme['yellow-700']};
+    }
+    @media (max-width: 550px) {
+      margin-bottom: 0.7rem;
     }
   }
 `

@@ -1,8 +1,31 @@
 import { MapPin, Timer, CurrencyDollar } from 'phosphor-react'
 import illustration from '../../assets/imgs/illustration.png'
 import { PurchaseCompletedComponent } from './styles'
+import { useProducts } from '../../hooks/useProducts'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+export const TYPE_PAYMENT = {
+  creditCard: 'Cartão de Crédito',
+  debitCard: 'Cartão de Debito',
+  money: 'Dinheiro',
+} as const
 
 export function PurchaseCompletedPage() {
+  const { shoppingCart, address } = useProducts()
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (
+      (shoppingCart.length > 0 &&
+        location.pathname === '/purchase-completed') ||
+      !!address
+    ) {
+      navigate('/')
+    }
+  }, [location.pathname])
+
   return (
     <PurchaseCompletedComponent>
       <div>
@@ -15,9 +38,14 @@ export function PurchaseCompletedPage() {
             </div>
             <div>
               <span>
-                Entrega em <strong>Rua João Daniel Martinelli, 102</strong>
+                Entrega em{' '}
+                <strong>
+                  Rua {address.street}, {address.numberHouse}
+                </strong>
               </span>
-              <span>Farrapos - Porto Alegre, RS</span>
+              <span>
+                {address.district} - {address.city}, {address.uf}
+              </span>
             </div>
           </div>
           <div>
@@ -35,7 +63,7 @@ export function PurchaseCompletedPage() {
             </div>
             <div>
               <span>Pagamento na entrega</span>
-              <strong>Cartão de Crédito</strong>
+              <strong>{TYPE_PAYMENT[address.payment]}</strong>
             </div>
           </div>
         </div>

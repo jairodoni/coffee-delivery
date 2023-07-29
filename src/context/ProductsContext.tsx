@@ -25,6 +25,7 @@ interface ProductsContextData {
   coffeeList: Coffee[]
   shoppingCart: ShoppingCart[]
   totalPayment: number
+  address: ShippingAddressFormData
   handleSetShoppingCart: (product: ShoppingCart) => void
   handleRemoveItemShoppingCart: (product: ShoppingCart) => void
   calcTotalPayment: () => void
@@ -42,6 +43,7 @@ export const ProductsContext = createContext({} as ProductsContextData)
 export function ProductsProvider({ children }: ProductsProviderProps) {
   const [coffeeList, setCoffeeList] = useState<Coffee[]>([])
   const [totalPayment, setTotalPayment] = useState<number>(0)
+  const [address, setAddress] = useState<ShippingAddressFormData>()
   const [productOrder, setProductOrder] = useState<FinalShoppingList | null>(
     null,
   )
@@ -166,9 +168,13 @@ export function ProductsProvider({ children }: ProductsProviderProps) {
       payment: data.payment,
     }
 
-    console.log(formatedData)
     await api.post('/shoppingRegistred', formatedData)
+    localStorage.setItem(
+      '@coffee-delivery:shopping-cart-coffee-1.0.0',
+      JSON.stringify([]),
+    )
     setShoppingCart([])
+    setAddress(data)
     navigate('/purchase-completed')
   }
 
@@ -182,6 +188,7 @@ export function ProductsProvider({ children }: ProductsProviderProps) {
         coffeeList,
         shoppingCart,
         totalPayment,
+        address,
         handleSetShoppingCart,
         handleRemoveItemShoppingCart,
         registerNewOrder,

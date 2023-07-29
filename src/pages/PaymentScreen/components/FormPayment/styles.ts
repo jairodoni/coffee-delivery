@@ -15,6 +15,9 @@ export interface ColorIconProps {
 }
 
 export const FormContainer = styled.div`
+  width: 100%;
+  margin: 0 auto;
+
   > div {
     padding: 2.5rem;
   }
@@ -33,9 +36,6 @@ export const FormContainer = styled.div`
     background: ${(props) => props.theme['gray-300']};
     border: 2px solid ${(props) => props.theme['gray-400']};
 
-    &:first-child {
-      width: 12.5rem;
-    }
     &:focus {
       border: 2px solid ${(props) => props.theme['yellow-700']};
     }
@@ -103,10 +103,33 @@ export const FormContainer = styled.div`
     -webkit-appearance: none;
     margin: 0;
   }
-
+  > div > span {
+    margin: 5px;
+  }
   /* Firefox */
   input[type='number'] {
     -moz-appearance: textfield;
+  }
+
+  @media (min-width: 550px) {
+    input:first-child {
+      width: 12.5rem;
+    }
+  }
+  @media (max-width: 550px) {
+    > div > div:not(:first-child, :nth-child(2)) {
+      flex-direction: column;
+    }
+    > div > div > div + div {
+      margin-left: 0;
+    }
+    > input {
+      width: 100%;
+    }
+    > div:last-child > div:last-child {
+      display: flex;
+      flex-direction: column;
+    }
   }
 `
 
@@ -119,6 +142,14 @@ export const InputComponent = styled.div`
     color: #db1313;
   }
   input {
+    width: 100%;
+  }
+  > span {
+    margin: 5px;
+  }
+  @media (max-width: 550px) {
+    display: flex;
+    flex-direction: column;
     width: 100%;
   }
 `

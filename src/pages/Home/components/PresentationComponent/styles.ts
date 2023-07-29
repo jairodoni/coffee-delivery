@@ -68,7 +68,7 @@ export const PresentationItems = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 0.2rem;
 
-  div {
+  > div {
     display: inline-flex;
     align-items: center;
 
@@ -77,8 +77,13 @@ export const PresentationItems = styled.div`
       line-height: 1.3;
     }
   }
+
   div + div {
     margin: 1rem 0.5rem 0.5rem 0;
+  }
+
+  > div > span {
+    align-self: center;
   }
 
   @media (max-width: 480px) {

@@ -17,6 +17,7 @@ export const ProductSelectedContainer = styled.div`
   > div {
     width: 100%;
     display: inline-flex;
+
     justify-content: space-between;
 
     font-size: 1rem;
@@ -66,6 +67,14 @@ export const ProductSelectedContainer = styled.div`
       &:hover {
         filter: brightness(0.95);
       }
+    }
+  }
+  @media (max-width: 380px) {
+    margin-top: 1rem;
+    > img {
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-right: 0.5rem;
     }
   }
 `

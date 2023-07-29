@@ -10,6 +10,7 @@ import { ProductSelected } from './components/ProductSelected'
 
 import { PaymentContainer, TotalComponent } from './styles'
 import { formatPriceWithType } from '../../util/format'
+import { useNavigate } from 'react-router-dom'
 
 const shippingAddressFormValidationSchema = zod.object({
   cep: zod
@@ -31,7 +32,9 @@ const shippingAddressFormValidationSchema = zod.object({
       invalid_type_error: 'O numero é obrigatória',
     })
     .min(1, 'Numero invalido')
-    .max(5000, 'Numero invalido'),
+    .max(5000, 'Numero invalido')
+    .int()
+    .positive(),
   complement: zod
     .string({
       required_error: 'O conteudo deve ser em texto',
@@ -57,7 +60,7 @@ const shippingAddressFormValidationSchema = zod.object({
     })
     .min(2, 'Informe o cep')
     .max(2, 'Cep Invalido'),
-  payment: zod.string().min(5, 'Informe a forma de pagamento'),
+  payment: zod.enum(['creditCard', 'debitCard', 'money']),
 })
 
 export type ShippingAddressFormData = zod.infer<
@@ -73,12 +76,12 @@ export function PaymentScreen() {
     calcTotalPayment,
   } = useProducts()
 
+  //  eslint-disable-next-line
   const shippingAddressForm = useForm<ShippingAddressFormData>({
     resolver: zodResolver(shippingAddressFormValidationSchema),
     defaultValues: {
       cep: '',
       street: '',
-      numberHouse: 0,
       complement: '',
       district: '',
       city: '',
@@ -87,6 +90,8 @@ export function PaymentScreen() {
   })
 
   const { handleSubmit, reset } = shippingAddressForm
+
+  const navigate = useNavigate()
 
   const listProducts = shoppingCart.sort(
     (productA, productB) => productA.coffeeId - productB.coffeeId,
@@ -108,6 +113,12 @@ export function PaymentScreen() {
   const totalWithFrete = totalPayment + frete
 
   const formatValue = (value: number) => formatPriceWithType(value)
+
+  useEffect(() => {
+    if (shoppingCart.length === 0 && location.pathname === '/payment') {
+      navigate('/')
+    }
+  }, [location.pathname])
 
   return (
     <PaymentContainer onSubmit={handleSubmit(handleRegisterNewOrder)} action="">

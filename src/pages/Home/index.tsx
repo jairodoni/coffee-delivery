@@ -6,6 +6,7 @@ import { HomeContainer, ProductsContainer } from './styles'
 
 export function Home() {
   const { coffeeList } = useProducts()
+
   return (
     <HomeContainer>
       <HeadTitleComponent title="Home" />

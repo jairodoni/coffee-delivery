@@ -14,6 +14,30 @@ export const HeaderContainer = styled.header`
     justify-content: flex-end;
     flex-direction: row;
   }
+  > div > div {
+    position: absolute;
+    top: 1.4rem;
+    margin-right: -9px;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 999px;
+
+    height: 20px;
+    width: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: ${(props) => props.theme['yellow-700']};
+    color: ${(props) => props.theme['gray-100']};
+
+    @media (max-width: 480px) {
+      top: 0.8rem;
+      margin-right: -8px;
+    }
+  }
 `
 
 export const LocationContainer = styled.div`

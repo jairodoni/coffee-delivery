@@ -61,9 +61,6 @@ export function FormPayment() {
       setValue('payment', 'money')
     }
   }, [typePaymentSelected])
-  useEffect(() => {
-    console.log(payment)
-  }, [payment])
 
   return (
     <FormContainer>
