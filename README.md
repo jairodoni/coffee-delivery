@@ -111,24 +111,24 @@ $ yarn
 ### Executando JSON Server
 
 ```sh
-# Executando o website no modo de desenvolvimento:
+# Executando o JSON Server:
 $ npm run server
 
 # ou
 
-# Executando o website no modo de desenvolvimento:
+# Executando o JSON Server:
 $ yarn server
 ```
 ---
 ### Executando o WebSite
 
 ```sh
-# Executando o website no modo de desenvolvimento:
+# Executando o website em outra aba de terminal:
 $ npm run dev
 
 # ou
 
-# Executando o website no modo de desenvolvimento:
+# Executando o website em outra aba de terminal:
 $ yarn dev
 ```
 > Se o browser não abrir automaticamente, acesse: http://localhost:5173.
