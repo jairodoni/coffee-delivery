@@ -28,7 +28,7 @@ export const PurchaseCompletedComponent = styled.div`
       flex-direction: column;
 
       border-radius: 6px 36px;
-      border: 2px solid transparent;
+      border: 1px solid transparent;
       background:
         linear-gradient(
             ${(props) => props.theme['gray-100']},

@@ -20,11 +20,15 @@ export function PurchaseCompletedPage() {
     if (
       (shoppingCart.length > 0 &&
         location.pathname === '/purchase-completed') ||
-      !!address
+      !address
     ) {
       navigate('/')
     }
   }, [location.pathname])
+
+  if (!address) {
+    return <div />
+  }
 
   return (
     <PurchaseCompletedComponent>
