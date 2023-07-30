@@ -108,6 +108,18 @@ $ yarn
 > Veja a parte de **scripts {}** do arquivo <kbd>[package.json](./package.json)</kbd> para saber quais scripts estão disponíveis.
 
 
+### Executando JSON Server
+
+```sh
+# Executando o website no modo de desenvolvimento:
+$ npm run server
+
+# ou
+
+# Executando o website no modo de desenvolvimento:
+$ yarn server
+```
+---
 ### Executando o WebSite
 
 ```sh
