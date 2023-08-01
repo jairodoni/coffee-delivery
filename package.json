@@ -8,8 +8,9 @@
   },
   "scripts": {
     "dev": "vite",
-    "server": "json-server ./src/data/db.json -p 3333",
+    "server": "node ./server.js",
     "build": "tsup src && tsc && vite build",
+    "start": "npm run server",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
