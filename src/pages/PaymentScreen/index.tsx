@@ -96,6 +96,7 @@ export function PaymentScreen() {
   const listProducts = shoppingCart.sort(
     (productA, productB) => productA.coffeeId - productB.coffeeId,
   )
+
   useEffect(() => {
     if (shoppingCart.length > 0 && coffeeList.length > 0) {
       calcTotalPayment()

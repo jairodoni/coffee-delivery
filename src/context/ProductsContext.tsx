@@ -73,8 +73,8 @@ export function ProductsProvider({ children }: ProductsProviderProps) {
   async function getProductList() {
     const response = await api.get('/products')
     setCoffeeList(response.data)
+    console.log(response)
   }
-
   function handleSetShoppingCart(product: ShoppingCart) {
     const checkItem = shoppingCart.find(
       (productItem) => productItem.coffeeId === product.coffeeId,

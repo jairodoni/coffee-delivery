@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
   width: 100%;
@@ -14,7 +14,8 @@ export const HeaderContainer = styled.header`
     justify-content: flex-end;
     flex-direction: row;
   }
-  > div > div {
+  > div > div:nth-child(2),
+  > div > div:nth-child(3) {
     position: absolute;
     top: 1.4rem;
     margin-right: -9px;
@@ -30,15 +31,15 @@ export const HeaderContainer = styled.header`
     align-items: center;
     justify-content: center;
 
-    background: ${(props) => props.theme['yellow-700']};
-    color: ${(props) => props.theme['gray-100']};
+    background: ${(props) => props.theme["yellow-700"]};
+    color: ${(props) => props.theme["gray-100"]};
 
     @media (max-width: 480px) {
       top: 0.8rem;
       margin-right: -8px;
     }
   }
-`
+`;
 
 export const LocationContainer = styled.div`
   min-width: 100px;
@@ -53,8 +54,8 @@ export const LocationContainer = styled.div`
   padding: 10px 8px;
   font-size: 0.9rem;
 
-  background: ${(props) => props.theme['purple-300']};
-  color: ${(props) => props.theme['purple-700']};
+  background: ${(props) => props.theme["purple-300"]};
+  color: ${(props) => props.theme["purple-700"]};
   border: none;
   border-radius: 8px;
 
@@ -62,10 +63,10 @@ export const LocationContainer = styled.div`
     margin-left: 10px;
   }
   > svg {
-    color: ${(props) => props.theme['purple-500']};
+    color: ${(props) => props.theme["purple-500"]};
     margin-right: 4px;
   }
-`
+`;
 
 export const CartButtom = styled.button`
   width: 38px;
@@ -75,9 +76,9 @@ export const CartButtom = styled.button`
   align-items: center;
   justify-content: center;
 
-  background: ${(props) => props.theme['yellow-300']};
-  color: ${(props) => props.theme['yellow-700']};
+  background: ${(props) => props.theme["yellow-300"]};
+  color: ${(props) => props.theme["yellow-700"]};
 
   border: none;
   border-radius: 8px;
-`
+`;

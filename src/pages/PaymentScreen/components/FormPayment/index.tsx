@@ -45,7 +45,7 @@ export function FormPayment() {
   }
 
   useEffect(() => {
-    if (cepFilled.length > 0) {
+    if (cepFilled && cepFilled.length > 0) {
       searchCepInfoLocation(cepFilled)
     }
   }, [cepFilled])
