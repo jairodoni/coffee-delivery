@@ -26,7 +26,6 @@ export function FormPayment() {
   } = useFormContext()
 
   const cepFilled = watch('cep')
-  const payment = watch('payment')
 
   async function searchCepInfoLocation(text: string) {
     const cepSplitFormated = text.split('-')

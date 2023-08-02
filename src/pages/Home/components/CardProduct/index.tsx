@@ -35,7 +35,7 @@ export function CardProduct({ product }: CardProductProps) {
       <div>
         <InfoProduct>
           <label>
-            {product.type.map((typeName: string) => (
+            {[...product.type].map((typeName: string) => (
               <span key={typeName}>{typeName.toString().toUpperCase()}</span>
             ))}
           </label>

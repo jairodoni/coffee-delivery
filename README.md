@@ -4,14 +4,14 @@
 
 <div align="center">
 
-   [![Licence](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE.md) 
-   <img alt="TypeScript" src="https://img.shields.io/badge/typescript-%23007ACC.svg?&style=for-the-badge&logo=typescript&logoColor=white"/> 
-  <img alt="React" src="https://img.shields.io/badge/react-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/> 
-  <img alt="Styled Component" src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white"/>
-  <img alt="Yarn" src="https://img.shields.io/badge/Yarn-2C8EBB?style=for-the-badge&logo=yarn&logoColor=white"/> 
-  <img alt="Vite" src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E"/>
-  <img alt="Vercel" src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"/>
-    
+[![Licence](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE.md)
+<img alt="TypeScript" src="https://img.shields.io/badge/typescript-%23007ACC.svg?&style=for-the-badge&logo=typescript&logoColor=white"/>
+<img alt="React" src="https://img.shields.io/badge/react-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/>
+<img alt="Styled Component" src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white"/>
+<img alt="Yarn" src="https://img.shields.io/badge/Yarn-2C8EBB?style=for-the-badge&logo=yarn&logoColor=white"/>
+<img alt="Vite" src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E"/>
+<img alt="Vercel" src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"/>
+
 <br>
 
 <p align="center">
@@ -43,53 +43,58 @@
 </p>
 </div>
 
+## **✨ Preview**
+
+#### Sistema Online: https://coffee-delivery-ecomerce.vercel.app
+
+---
+
 ## **💻 Projeto**
+
 Um projeto desenvolvido durante o <b>Bootcamp Ignite</b> da <b>Rocketseat</b>, o projeto "Coffee Delivery" é um projeto que simula um e-commerce de venda de cafés por entrega.
 
 ---
 
 ## **🔖 Layout**
 
-Você pode visualizar o layout do projeto no formato através [desse link](https://www.figma.com/file/cXnQ94HEjpoxl55ZtjKRiy/Coffee-Delivery-(JD)?type=design&node-id=2%3A12&mode=design&t=FEeKvDZIRfmBSa9U-1). Lembrando que você irá precisar ter uma conta no [Figma](http://figma.com/).
-
+Você pode visualizar o layout do projeto no formato através [desse link](<https://www.figma.com/file/cXnQ94HEjpoxl55ZtjKRiy/Coffee-Delivery-(JD)?type=design&node-id=2%3A12&mode=design&t=FEeKvDZIRfmBSa9U-1>). Lembrando que você irá precisar ter uma conta no [Figma](http://figma.com/).
 
 #### **Web**
+
 <p align="center">
   <img  src=".github/screen01.png" width="100%">
   <img  src=".github/screen02.png" width="100%">
   <img  src=".github/screen03.png" width="100%">
 </p>
 
-
 ---
 
 ## **💻 Tecnologias**
 
+#### **Website** ([React][react])
 
- #### **Website** ([React][react])
- 
-  - **[React][react]**
-  - **[Typescript][typescript]**
-  - **[Vite][vite]**
-  - **[Styled Components][styled_components]**
-  - **[React Hook Form][react_hook_form]**
-  - **[JSON Sserver][json_server]**
-  - **[Node v18.16.1][node]**
+- **[React][react]**
+- **[Typescript][typescript]**
+- **[Vite][vite]**
+- **[Styled Components][styled_components]**
+- **[React Hook Form][react_hook_form]**
+- **[JSON Sserver][json_server]**
+- **[Node v18.16.1][node]**
 
 > \* Veja o arquivo <kbd>[package.json](./package.json)</kbd>
 
- #### **Utilitários**
- 
- - Editor: **[Visual Studio Code][vscode]** 
- - Markdown: **[StackEdit][stackedit]**, **<kbd>[Markdown Emoji][markdown_emoji]</kbd>**
+#### **Utilitários**
+
+- Editor: **[Visual Studio Code][vscode]**
+- Markdown: **[StackEdit][stackedit]**, **<kbd>[Markdown Emoji][markdown_emoji]</kbd>**
 
 ---
 
-##  **🚀 Como executar o projeto**
+## **🚀 Como executar o projeto**
 
 ### Configurações Iniciais
 
-Primeiro, você precisa ter o <kbd>[NodeJS](https://nodejs.org/en/download/)</kbd> instalado na sua máquina. 
+Primeiro, você precisa ter o <kbd>[NodeJS](https://nodejs.org/en/download/)</kbd> instalado na sua máquina.
 
 Se você estiver utilizando o **Linux**, você pode optar por instalar o **Node** através do gerênciador de versões <kbd>[nvm]</kbd> para caso seja nescessario alterar a sua versão do **Node** para uma versão mais antiga ou mais nova.
 
@@ -107,7 +112,6 @@ $ yarn
 
 > Veja a parte de **scripts {}** do arquivo <kbd>[package.json](./package.json)</kbd> para saber quais scripts estão disponíveis.
 
-
 ### Executando JSON Server
 
 ```sh
@@ -119,7 +123,9 @@ $ npm run server
 # Executando o JSON Server:
 $ yarn server
 ```
+
 ---
+
 ### Executando o WebSite
 
 ```sh
@@ -131,6 +137,7 @@ $ npm run dev
 # Executando o website em outra aba de terminal:
 $ yarn dev
 ```
+
 > Se o browser não abrir automaticamente, acesse: http://localhost:5173.
 
 ---
@@ -158,7 +165,6 @@ $ yarn dev
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
 
-
 <!-- Website Links -->
 
 [rocketseat_site]: https://rocketseat.com.br/
@@ -166,43 +172,25 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para
 <!-- Badges -->
 
 [repository_license_badge]: https://img.shields.io/github/license/JairoDoni/NLW-1.0
-
 [web_react_badge]: https://img.shields.io/badge/web-react-blue
-
 [typescript]: https://img.shields.io/badge/types-Typescript-blue
 
 <!-- Techs -->
 
 [react]: https://reactjs.org/
-
 [vite]: https://vitejs.dev
-
 [styled_components]: https://styled-components.com
-
 [zod]: https://zod.dev
-
 [json_server]: https://github.com/typicode/json-server
-
 [react_hook_form]: https://www.react-hook-form.com
-
 [node]: https://nodejs.org/en/
-
 [nvm]: https://github.com/nvm-sh/nvm
-
 [vscode]: https://code.visualstudio.com/
-
 [react_native]: http://www.reactnative.com/
-
 [stackedit]: https://stackedit.io
-
 [markdown_emoji]: https://gist.github.com/rxaviers/7360908
-
 [react_icons]: https://react-icons.github.io/react-icons/
-
 [typescript]: https://www.typescriptlang.org/
-
 [asdf]: https://github.com/asdf-vm/asdf
-
 [yarn]: https://classic.yarnpkg.com/en/docs/install/#debian-stable
-
 [webpack]: https://webpack.js.org
